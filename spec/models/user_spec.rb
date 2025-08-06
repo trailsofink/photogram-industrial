@@ -5,7 +5,7 @@
 #  id                     :bigint           not null, primary key
 #  avatar_image           :string
 #  bio                    :string
-#  comment_count          :integer          default(0)
+#  comments_count         :integer          default(0)
 #  email                  :citext           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  likes_count            :integer          default(0)
