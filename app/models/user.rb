@@ -30,8 +30,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+    :recoverable, :rememberable, :validatable
 
+  mount_uploader :avatar_image, ImageUploader
   has_many :likes, foreign_key: :fan_id
   has_many :own_photos, foreign_key: "owner_id", class_name: "Photo"
   has_many :comments, foreign_key: "author_id"
