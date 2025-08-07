@@ -29,7 +29,6 @@
           <span class="font-weight-bold">
             <%= user.followers.size %>
           </span>
-
           followers
         <% end %>
       </div>
@@ -45,7 +44,6 @@
           <span class="font-weight-bold">
             <%= user.leaders.size %>
           </span>
-
           following
         <% end %>
       </div>
@@ -61,7 +59,6 @@
           <span class="font-weight-bold">
             <%= user.pending.size %>
           </span>
-
           pending
         <% end %>
       </div>
@@ -126,7 +123,7 @@
     </p>
 
     <p>
-      <%= only_host_and_path(user.website) %>
+      <%= user.website %>
     </p>
   </div>
 </div>

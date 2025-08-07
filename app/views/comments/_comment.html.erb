@@ -5,7 +5,12 @@
       class: "rounded-circle me-2 img-cover img-small" %>
     </div>
     <div class="flex-grow-1 ms-3">
-      <h5 class="mt-0"><%= comment.author.username %></h5>
+      <h5 class="mt-0">
+        <%= link_to comment.author.username,
+        user_path(comment.author.username),
+        class:
+          "text-dark link-underline-dark link-underline-opacity-0 link-underline-opacity-100-hover" %>
+      </h5>
       <p><%= comment.body %></p>
       <% if current_user.id == comment.author_id %>
         <%= link_to edit_comment_path(comment), class: "btn btn-link btn-sm text-muted" do %>
