@@ -4,7 +4,9 @@
     <div class="card">
       <%= image_tag photo.image_url, class: "card-img-top" %>
       <div class="card-body">
-        <h5 class="card-title"><%= photo.owner.username %></h5>
+        <div class="mb-3 d-flex justify-content-between">
+          <%= render "photos/likes", photo: photo %>
+        </div>
         <p class="card-text"><%= photo.caption %></p>
       </div>
       <ul class="list-group list-group-flush">
