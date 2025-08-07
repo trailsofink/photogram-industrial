@@ -10,9 +10,14 @@ class UsersController < ApplicationController
   end
 
   def discover
+    @user = User.find_by!(username: params.fetch(:username))
   end
 
   def feed
-    @user = User.find_by!(username: params.fetch(:username))
+    if params[:username]
+      @user = User.find_by!(username: params.fetch(:username))
+    else
+      @user = current_user
+    end
   end
 end
